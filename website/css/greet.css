@@ -1,0 +1,47 @@
+.emphasis {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.point {
+  color: var(--point-color);
+}
+
+.greet_section p {
+  text-align: center;
+  margin: 30px 0;
+  line-height: 26px;
+}
+
+.greet_section figure {
+  width: 850px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.greet_section figure img {
+  width: 48%;
+  box-sizing: border-box;
+  padding: 5px;
+  background-color: var(--main-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+/* motion */
+.greet_section>* {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.greet_section> *:nth-child(odd) {
+  transform: translateX(-100px);
+}
+.greet_section> *:nth-child(even) {
+  transform: translateX(100px);
+}
+
+.greet_section>*.active{
+  opacity: 1;
+  transform: translateX(0);
+}

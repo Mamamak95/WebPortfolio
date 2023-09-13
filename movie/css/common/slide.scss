@@ -1,0 +1,31 @@
+@use '../mixin.scss' as m;
+.slide{
+  overflow: hidden;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  -webkit-mask-image: url(../../img/mask.png);//먼저 webkit을 사용하고 호환이 되는 브라우저면 다음을 사용
+  -webkit-mask-size:100% 100%;
+  mask-image: url(../../img/mask.png);
+  mask-size:100% 100%;
+  @media #{m.$min-lg} {
+    filter: brightness(30%);
+    height: 35vh;
+  }
+  @media #{m.$max-lg} {
+    filter: brightness(70%);
+    height: 50vh;
+  }
+  img{
+    position: absolute;
+    @include m.cover;
+    filter: brightness();
+    transition: transform 10s linear,opacity 1s linear;
+    transform: scale(1.1);
+    opacity: 0;
+    &.active{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

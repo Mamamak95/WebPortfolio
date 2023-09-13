@@ -1,0 +1,68 @@
+main.search-content {
+  position: relative;
+  margin: 15vh auto 0;
+  width: min(90%, 1400px);
+}
+
+form.search-form {
+  max-width: 1000px;
+  margin: 0 auto 30px;
+}
+form.search-form fieldset.search-keyword {
+  display: flex;
+  border: none;
+  opacity: 0.8;
+}
+form.search-form fieldset.search-keyword > * {
+  height: 50px;
+  border: none;
+  background-color: #fff;
+}
+form.search-form fieldset.search-keyword .search-icon,
+form.search-form fieldset.search-keyword button {
+  width: 50px;
+  line-height: 50px;
+  color: var(--sky);
+  text-align: center;
+  font-size: 1.3em;
+}
+form.search-form fieldset.search-keyword input {
+  flex: 1;
+  color: var(--sky);
+  font-size: 1.9em;
+  outline: none;
+}
+form.search-form fieldset.search-keyword input::-moz-placeholder {
+  color: #ccc;
+}
+form.search-form fieldset.search-keyword input::placeholder {
+  color: #ccc;
+}
+form.search-form fieldset.search-keyword input::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+form.search-form fieldset.genre-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  border: none;
+}
+form.search-form fieldset.genre-btns button {
+  padding: 7px 15px;
+  background-color: var(--sky);
+  margin: 5px;
+  border-radius: 5px;
+}
+form.search-form fieldset.genre-btns button:hover {
+  background-color: var(--green);
+  transition: all 0.5s;
+  transform: translate(-1px, -3px);
+}
+form.search-form fieldset.genre-btns button.active {
+  background-color: orange;
+}
+
+.trigger {
+  opacity: 0;
+}/*# sourceMappingURL=search.css.map */

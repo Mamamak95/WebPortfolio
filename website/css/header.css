@@ -1,0 +1,169 @@
+body{
+  padding-top: 130px;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  min-width: 1200px;
+  height: 130px;
+  border: 1px solid var(--main-color);
+  background-color: #FFF;
+  border-top: none;
+}
+
+header.active{
+  position: fixed;
+  top: -40px;
+}
+
+header nav.member {
+  min-width: 1200px;
+  height: 40px;
+  background: var(--dark-color);
+  color: #EEE;
+}
+
+header nav.member .center {
+  width: 1200px;
+  /* 관례적으로 1200 or 1000 */
+  height: inherit;
+  margin: 0 auto;
+  text-align: right;
+  line-height: 40px;
+}
+
+header nav.member .center a {
+  color: #AAA;
+  font-size: 0.8em;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+header nav.member .center a:hover {
+  color: #FFF;
+}
+
+header div.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1200px;
+  height: 90px;
+  margin: 0 auto;
+  /* background-color: #CCC; */
+}
+
+header div.bottom h1 {
+  height: 60%;
+}
+
+header div.bottom h1 img {
+  height: 100%;
+  object-fit: contain;
+}
+
+nav.gnb {/* 상단메뉴바 넓이는 주면 안됨 */
+  height: 45px;
+  /* background-color: rgb(194, 153, 153); */
+}
+
+nav.gnb>ul{
+  display: flex;
+  height: inherit;
+}
+nav.gnb>ul>li{
+  height: inherit;
+  color: black;
+  /* overflow: hidden; */
+}
+nav.gnb>ul>li>a{
+  display: block;
+  height: inherit;
+  line-height: 45px;
+  padding: 0 40px;
+}
+nav.gnb>ul>li:hover>a{
+color: var(--point-color);
+}
+nav.gnb>ul>li>ul{
+  display:flex;
+  flex-direction: column;
+}
+nav.gnb>ul>li>ul>li>a{
+  display: block;
+  padding: 0 10px;
+  background-color: rgb(201, 161, 109);
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
+  transition: all 0.05s;
+}
+nav.gnb>ul>li>ul>li>a:hover{
+  background-color: var(--sub-color);
+}
+
+nav.gnb>ul>li>ul{
+  display: none;
+}
+
+nav.gnb li.menu_member,
+nav.gnb li.menu_Family,
+nav.gnb h6
+{
+  display: none;
+}
+
+nav.quick{
+  position: absolute;
+  right: 20px;
+  width: 80px;
+  z-index: 11;
+  transition: all 0.8s;
+  pointer-events: none;
+  opacity: 0;
+}
+
+nav.quick.active{
+  opacity: 1;
+  pointer-events: all;
+}
+
+nav.quick>*{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: #FFF;
+  font-size: 0.8em;
+}
+
+nav.quick b{
+  background-color: orange;
+  height: 35px;
+}
+
+nav.quick a{
+background-color: #444;
+height: 90px;
+border: 1px solid #666;
+}
+
+nav.quick a:hover{
+  background-color: var(--sub-color);
+}
+
+nav.quick a i{
+
+  font-size: 2.5em;
+  margin-bottom: 3px;
+}
+nav.quick button{
+  background-color: orange;
+  width: 100%;
+  height: 35px;
+}

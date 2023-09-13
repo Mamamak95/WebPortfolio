@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.carousel{
+  position: relative;
+  width: min(90%,1200px);
+  margin: 50px auto;
+  border:1px solid black;
+  overflow: hidden;
+}
+.carousel img{
+  width: 100%;
+  filter: grayscale(1);
+}
+.carousel .swiper-slide-active img{
+  filter: grayscale(0);
+}
+.pagination {
+  text-align: center;
+}

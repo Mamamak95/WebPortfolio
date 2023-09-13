@@ -1,0 +1,132 @@
+@use "mixin" as m;
+.works_content {
+  position: relative;
+  width: min(95%, 1400px);
+  padding-top: 25vh;
+  margin: 0 auto;
+  figure {
+    margin-bottom: 25vh;
+    @media #{m.$minLg} {
+      width: 30%;
+      &:nth-child(4n + 1) {
+        margin-left: auto;
+      }
+      &:nth-child(even) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      // &:nth-child(4n+3){margin-right: auto;}
+    }
+    @media #{m.$md} {
+      width: 70%;
+      &:nth-child(even) {
+        margin-left: auto;
+      }
+    }
+    @media #{m.$maxSm} {
+      width: 100%;
+    }
+    a {
+      &:hover {
+        div {
+          border-color: var(--green);
+          filter: brightness(80%);
+          transform: scale(0.95);
+          img {
+            // transform: scale(1.2);
+          }
+        }
+      }
+      div {
+        overflow: hidden;
+        border: 5px solid #ccc;
+        box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.3);
+        transition: all 0.5s;
+        img {
+          width: 100%;
+          transition: all 0.5s;
+        }
+      }
+      figcaption {
+        color: #FFF;
+        h2 {
+          display: inline-block;
+          position: relative;
+          margin: 20px 0;
+          font-weight: 600;
+          font-size: 1.3em;
+          &::before {
+            content: "";
+            position: absolute;
+            height: 10px;
+            width: 55%;
+            bottom: 0;
+            left: 0;
+            background-color: var(--green);
+            mix-blend-mode: multiply;
+          }
+        }
+        p {
+          white-space: nowrap;
+          display: flex;
+          overflow: hidden;
+          br {
+            display: none;
+          }
+          span {
+            animation: rolling 5s infinite linear;
+            font-size: 1.2em;
+            
+            font-weight: 600;
+            @keyframes rolling {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-100%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(#01ac81, 0.7);
+  z-index: 6;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  transform: scale(0);
+  transition: transform .2s;
+}
+
+.works_bg{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  p{
+    font-weight: 900;
+    font-size: min(8vw,10em);
+    white-space: nowrap;
+    letter-spacing: 3vw;
+    color: rgba($color: #FFF, $alpha: .7);
+  }
+  #particles-js{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+}

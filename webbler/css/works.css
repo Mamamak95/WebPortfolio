@@ -1,0 +1,128 @@
+.works_content {
+  position: relative;
+  width: min(95%, 1400px);
+  padding-top: 25vh;
+  margin: 0 auto;
+}
+.works_content figure {
+  margin-bottom: 25vh;
+}
+@media screen and (min-width : 1000px) {
+  .works_content figure {
+    width: 30%;
+  }
+  .works_content figure:nth-child(4n+1) {
+    margin-left: auto;
+  }
+  .works_content figure:nth-child(even) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width:500px) and (max-width:1000px) {
+  .works_content figure {
+    width: 70%;
+  }
+  .works_content figure:nth-child(even) {
+    margin-left: auto;
+  }
+}
+@media screen and (max-width : 500px) {
+  .works_content figure {
+    width: 100%;
+  }
+}
+.works_content figure a:hover div {
+  border-color: var(--green);
+  filter: brightness(80%);
+  transform: scale(0.95);
+}
+.works_content figure a div {
+  overflow: hidden;
+  border: 5px solid #ccc;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s;
+}
+.works_content figure a div img {
+  width: 100%;
+  transition: all 0.5s;
+}
+.works_content figure a figcaption {
+  color: #FFF;
+}
+.works_content figure a figcaption h2 {
+  display: inline-block;
+  position: relative;
+  margin: 20px 0;
+  font-weight: 600;
+  font-size: 1.3em;
+}
+.works_content figure a figcaption h2::before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 55%;
+  bottom: 0;
+  left: 0;
+  background-color: var(--green);
+  mix-blend-mode: multiply;
+}
+.works_content figure a figcaption p {
+  white-space: nowrap;
+  display: flex;
+  overflow: hidden;
+}
+.works_content figure a figcaption p br {
+  display: none;
+}
+.works_content figure a figcaption p span {
+  animation: rolling 5s infinite linear;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+@keyframes rolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(1, 172, 129, 0.7);
+  z-index: 6;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  transform: scale(0);
+  transition: transform 0.2s;
+}
+
+.works_bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+}
+.works_bg p {
+  font-weight: 900;
+  font-size: min(8vw, 10em);
+  white-space: nowrap;
+  letter-spacing: 3vw;
+  color: rgba(255, 255, 255, 0.7);
+}
+.works_bg #particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=works.css.map */

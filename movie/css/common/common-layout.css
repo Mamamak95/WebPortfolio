@@ -1,0 +1,310 @@
+@charset "UTF-8";
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  text-decoration: none;
+  font-weight: normal;
+  background-color: var(--navy);
+  background-image: url(../../img/line-pattern.png);
+  background-size: 17px;
+  animation: bgmove linear 100s infinite;
+}
+@keyframes bgmove {
+  0% {
+    background-position: 0, 0;
+  }
+  100% {
+    background-position: -100%, 0;
+  }
+}
+@media screen and (min-width:1000px) {
+  body {
+    padding-top: 80px;
+  }
+}
+@media screen and (max-width:1000px) {
+  body {
+    padding-top: 60px;
+  }
+}
+body main {
+  min-height: 50vh;
+  overflow: hidden;
+}
+@media (hover: hover) {
+  body {
+    /* 모바일에서는 비활성화되게 */
+  }
+  body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #000;
+  }
+  body::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+  }
+  body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--sky);
+  }
+}
+
+section.common-section {
+  padding: 30px 0;
+  margin: 0 auto;
+}
+section.common-section .no-data {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--green);
+}
+section.common-section h2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+section.common-section h2 i {
+  color: var(--sky);
+  margin-right: 10px;
+  font-size: 1.5em;
+}
+section.common-section h2 em {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+section.common-section h2::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: 10px;
+}
+
+section.movie-grid-section div figure {
+  padding: 0 10px;
+  height: auto;
+  box-sizing: border-box;
+}
+section.movie-grid-section div figure a {
+  display: block;
+  height: 100%;
+  background-color: var(--sky);
+  transition: all 0.3s;
+}
+section.movie-grid-section div figure a:hover {
+  transform: scale(1.1);
+  position: relative;
+  z-index: 11;
+  background-color: var(--green);
+}
+section.movie-grid-section div figure a:hover div.img-box img {
+  filter: brightness(100%);
+}
+section.movie-grid-section div figure a div {
+  position: relative;
+  overflow: hidden;
+}
+section.movie-grid-section div figure a div img {
+  width: 100%;
+  filter: brightness(80%);
+  transition: all 0.3s;
+}
+section.movie-grid-section div figure a div span {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  right: -40px;
+  top: -40px;
+  transform: rotate(45deg);
+  background-color: rgba(255, 0, 0, 0.7);
+}
+section.movie-grid-section div figure a div small {
+  position: absolute;
+  font-size: 0.8em;
+  top: 5px;
+  right: 5px;
+}
+section.movie-grid-section div figure a figcaption {
+  padding: 10px;
+}
+section.movie-grid-section div figure a figcaption h3,
+section.movie-grid-section div figure a figcaption p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+section.movie-grid-section div figure a figcaption h3 {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+section.movie-grid-section div figure a figcaption p {
+  font-size: 0.9em;
+}
+
+section.swiper-section .carousel {
+  position: relative;
+}
+section.swiper-section .carousel::before, section.swiper-section .carousel::after {
+  content: "";
+  position: absolute;
+  z-index: 13;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  -webkit-backdrop-filter: blur(2px) brightness(70%);
+          backdrop-filter: blur(2px) brightness(70%);
+}
+section.swiper-section .carousel::before {
+  right: 100%;
+}
+section.swiper-section .carousel::after {
+  left: 100%;
+}
+@media (hover: hover) {
+  section.swiper-section .carousel:hover .next,
+  section.swiper-section .carousel:hover .prev {
+    opacity: 1;
+  }
+}
+section.swiper-section .carousel .next,
+section.swiper-section .carousel .prev {
+  opacity: 0;
+  display: none;
+  transition: all 0.5s;
+  position: absolute;
+  top: 50%;
+  z-index: 12;
+  transform: translateY(-50%);
+  font-size: 3em;
+}
+@media (hover: hover) {
+  section.swiper-section .carousel .next,
+  section.swiper-section .carousel .prev {
+    display: block;
+  }
+}
+section.swiper-section .carousel .prev {
+  left: 0;
+}
+section.swiper-section .carousel .next {
+  right: 0;
+}
+
+section.wrap-section .grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+section.wrap-section .grid-container figure {
+  margin-bottom: 20px;
+}
+@media screen and (min-width:1400px) {
+  section.wrap-section .grid-container figure {
+    width: 20%;
+  }
+}
+@media screen and (min-width:1000px) and (max-width:1400px) {
+  section.wrap-section .grid-container figure {
+    width: 25%;
+  }
+}
+@media screen and (min-width:500px) and (max-width:1000px) {
+  section.wrap-section .grid-container figure {
+    width: 33.33%;
+  }
+}
+@media screen and (max-width:500px) {
+  section.wrap-section .grid-container figure {
+    width: 50%;
+  }
+}
+
+section.scroll-section .grid-container {
+  overflow-x: auto;
+  display: flex;
+  padding-bottom: 20px;
+}
+@media (hover: hover) {
+  section.scroll-section .grid-container {
+    /* 모바일에서는 비활성화되게 */
+  }
+  section.scroll-section .grid-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #000;
+  }
+  section.scroll-section .grid-container::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+  }
+  section.scroll-section .grid-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--sky);
+  }
+}
+section.scroll-section .grid-container > * {
+  flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 5px solid #eee;
+  margin-right: 15px;
+}
+section.scroll-section .grid-container > *:hover img {
+  filter: brightness(100%);
+  transform: scale(1.1);
+}
+section.scroll-section .grid-container > * img {
+  filter: brightness(80%);
+  transition: all 0.5s;
+  width: 100%;
+}
+
+section.video-section .grid-container button {
+  width: 250px;
+}
+
+section.img-section .grid-container a {
+  display: block;
+  width: 250px;
+}
+
+section.people-section figure {
+  overflow: hidden;
+  width: 170px;
+}
+section.people-section figure:hover img {
+  transform: scale(1);
+  transition: all 0.5s;
+}
+section.people-section figure:hover figcaption {
+  background-color: var(--sky);
+}
+section.people-section figure:hover figcaption em {
+  color: white;
+}
+section.people-section figure figcaption {
+  position: relative;
+  background-color: var(--navy);
+  padding: 10px;
+  transition: all 1s;
+}
+section.people-section figure figcaption em {
+  transition: all 0.5s;
+  display: block;
+  color: var(--green);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+section.people-section figure figcaption b {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}/*# sourceMappingURL=common-layout.css.map */

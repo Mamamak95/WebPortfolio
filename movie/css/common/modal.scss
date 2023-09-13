@@ -1,0 +1,137 @@
+@use "../mixin" as m;
+
+.video-modal {
+  display: none;
+  position: fixed;
+  z-index: 101;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  .youtube-ratio {
+    @include m.pos-center;
+    max-width: 90%;
+    max-height: 90%;
+    opacity: 0;
+  }
+  iframe {
+    @include m.pos-center;
+  }
+}
+section.person-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 101;
+  background: rgba(#000, 0.8);
+  overflow: auto;
+  @include m.scrollbar;
+  display: none;
+  .center {
+    width: min(90%, 700px);
+    margin: 10vh auto;
+    text-align: center;
+    img.person-photo {
+      width: min(60%, 300px);
+      margin: 0 auto 30px;
+      border: 5px solid #eee;
+    }
+    ul {
+      box-sizing: border-box;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      background-color: rgba($color: #fff, $alpha: 0.1);
+      height: 200px;
+      transition: height .3s linear;
+      overflow: hidden;
+
+      li {
+        padding: 5px;
+        border-bottom: 1px dotted rgba($color: #fff, $alpha: 0.2);
+        font-weight: 600;
+      }
+    }
+    ul.profile {
+      li {
+        small {
+          opacity: 0.7;
+          margin-right: 10px;
+        }
+        &:not(:last-child) {
+          @include m.ellipsis;
+        }
+        em {
+          font-style: italic;
+        }
+      }
+    }
+    h3 {
+      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid var(--green);
+      margin-bottom: 20px;
+      color: var(--green);
+      font-style: italic;
+      text-transform: uppercase;
+      font-weight: 600;
+      i {
+        margin-right: 5px;
+      }
+    }
+    ul.filmography {
+      li {
+        &:hover {
+          text-decoration: underline;
+          color: var(--green);
+        }
+      }
+      time {
+        opacity: 0.7;
+        margin-right: 5px;
+        font-style: italic;
+      }
+      a {
+        em {
+          font-size: 1.1em;
+        }
+        small {
+          font-style: italic;
+        }
+      }
+    }
+    .moreBtn{
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      font-size: .8em;
+      width: 80px;
+      height: 30px;
+      
+      .close{
+        display: none;
+      }
+      &.active{
+        .close{
+          display:inline;
+        }
+        .open{
+          display:none;
+        }
+      }
+    }
+  }
+
+}
+button.modal-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 3em;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+}

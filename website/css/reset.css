@@ -1,0 +1,44 @@
+/* 초기화 boilerplate */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  font-style: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+  word-break: keep-all;/* 반응형에서 단어단위로 줄넘김 되게 만듦 */
+}
+
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input,
+select,
+textarea {
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+img,
+video,
+svg,
+canvas,
+iframe {
+  display: block;
+  /* 여백 생성 방지 */
+}
+

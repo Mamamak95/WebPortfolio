@@ -1,0 +1,111 @@
+header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  background-color: var(--navy);
+  background-image: url(../../img/check-pattern.png);
+  background-size: 17px;
+}
+@media screen and (min-width:1000px) {
+  header {
+    height: 80px;
+  }
+}
+@media screen and (max-width:1000px) {
+  header {
+    height: 60px;
+  }
+}
+header .center {
+  width: 95%;
+  height: inherit;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .center h1 {
+  height: 60%;
+}
+header .center h1 a {
+  height: 100%;
+  display: flex;
+  perspective: 1000px;
+}
+header .center h1 a img {
+  height: 100%;
+  margin-right: 10px;
+  transition: all 0.5s;
+}
+header .center h1:hover img:first-of-type {
+  transform: rotateY(-360deg);
+}
+header .center h1:hover img:last-child {
+  transform: rotateX(360deg);
+}
+header .center .gnb {
+  position: relative;
+}
+header .center .gnb div.menu-list {
+  display: inline-block;
+  position: absolute;
+  right: 120%;
+}
+header .center .gnb div.menu-list button.toggle-btn:active {
+  color: var(--green);
+}
+header .center .gnb div.menu-list ul {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  background-color: #333;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%);
+}
+header .center .gnb div.menu-list ul.active {
+  display: block;
+}
+header .center .gnb div.menu-list ul li {
+  margin: 3px 0;
+  white-space: nowrap;
+}
+header .center .gnb div.menu-list ul li a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+header .center .gnb a.goto-search {
+  font-weight: 600;
+  transition: all 0.2s;
+}
+header .center .gnb a.goto-search:hover {
+  color: var(--green);
+}
+header .center .gnb a.goto-search i {
+  margin-right: 3px;
+}
+
+.top-btn {
+  position: fixed;
+  z-index: 90;
+  right: 30px;
+  bottom: 20px;
+  width: 40px;
+  height: 50px;
+  background-color: var(--sky);
+  transition: all 0.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .top-btn:hover {
+    background-color: var(--green);
+  }
+}
+.top-btn.active {
+  opacity: 1;
+  pointer-events: all;
+}/*# sourceMappingURL=header.css.map */
