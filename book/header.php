@@ -11,3 +11,10 @@
   <script src="./js/header.js"></script>
 </head>
 <body>
+<header>
+
+</header>
+<div class="top_btn">
+  <button></button>
+  <button>TOP</button>
+</div>
